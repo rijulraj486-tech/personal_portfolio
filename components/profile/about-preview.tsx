@@ -1,0 +1,2 @@
+import Link from "next/link";
+export function AboutPreview() { return <section className="about-preview" aria-labelledby="about-preview-heading"><div><p className="eyebrow">About me</p><h2 id="about-preview-heading">A developer drawn to practical, thoughtful systems.</h2></div><div><p>I&apos;m Rijul Raj, a Computer Science postgraduate interested in software development, modern web technologies, and AI/ML.</p><Link className="text-link" href="/about">Read more about me <span aria-hidden="true">→</span></Link></div></section>; }
