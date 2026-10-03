@@ -1,0 +1,1 @@
+export function SiteFooter() { return <footer className="site-footer"><div className="container"><p>© {new Date().getFullYear()} Rijul Raj.</p><p>Built with Next.js and TypeScript.</p></div></footer>; }

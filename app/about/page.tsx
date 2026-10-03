@@ -1,0 +1,1 @@
+import type { Metadata } from "next"; import { PlaceholderPage } from "@/components/ui/placeholder-page"; export const metadata: Metadata = { title: "About" }; export default function AboutPage() { return <PlaceholderPage eyebrow="Background" title="About me" />; }
