@@ -68,7 +68,6 @@ export function ContactForm() {
         <Field label="Subject" field="subject" value={values.subject} error={errors.subject} onChange={updateValue} onBlur={validateField} />
         <Field label="Message" field="message" value={values.message} error={errors.message} onChange={updateValue} onBlur={validateField} description="Please include at least a few details so I can respond helpfully." textarea />
       </div>
-      <p className="contact-form-note">This form confirms receipt by the portfolio API; email delivery is not configured yet.</p>
       <p ref={statusRef} className={`contact-status ${state}`} role={state === "error" ? "alert" : "status"} tabIndex={-1} aria-live="polite">
         {statusMessage}
       </p>
