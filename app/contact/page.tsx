@@ -3,7 +3,10 @@ import { ContactForm } from "@/components/contact/contact-form";
 import { githubProfileUrl } from "@/lib/github";
 import { profile } from "@/lib/profile";
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Contact Rijul Raj about software development projects, opportunities, or research collaborations.",
+};
 
 export default function ContactPage() {
   const contactLinks = [

@@ -26,9 +26,9 @@ export function ProjectsCatalogue({ projects }: ProjectsCatalogueProps) {
             <button type="button" className={filter === category ? "filter-button is-active" : "filter-button" onClick={() => setFilter(category)} aria-pressed={filter === category} key={category}>{category}</button>
           ))}
         </div>
-        <label className="project-search"><span className="visually-hidden">Search projects</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects..." /></label>
+        <label className="project-search"><span className="sr-only">Search projects</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects..." /></label>
       </div>
-      <h2 className="visually-hidden" id="project-grid-heading">Project grid</h2>
+      <h2 className="sr-only" id="project-grid-heading">Project grid</h2>
       {visibleProjects.length ? <ProjectGrid projects={visibleProjects} /> : <div className="empty-projects" role="status"><h3>No projects found.</h3><p>Try a different search or category.</p></div>}
     </section>
   );
