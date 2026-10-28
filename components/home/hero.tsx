@@ -5,14 +5,21 @@ export function Hero() {
   return (
     <section className="editorial-hero reference-hero" aria-labelledby="home-heading">
       <div className="hero-stage">
-        <Image
-          className="reference-hero-image"
-          src="/image/Confident Portrait on a Warm Orange Gradient.png"
-          alt="Rijul Raj"
-          fill
-          priority
-          sizes="100vw"
-        />
+        <div className="reference-portrait-frame">
+          <Image
+            className="reference-hero-image"
+            src="/image/Confident Portrait on a Warm Orange Gradient.png"
+            alt="Rijul Raj"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className="reference-portrait-caption">
+            <small>01 / Focus</small>
+            <strong>AI / ML<br />Engineering</strong>
+            <span>Sensor fusion <i aria-hidden="true" /> Radar tracking</span>
+          </div>
+        </div>
         <div className="reference-hero-wash" aria-hidden="true" />
         <div className="hero-grid" aria-hidden="true" />
         <span className="reference-hero-wordmark" aria-hidden="true">RIJUL</span>
