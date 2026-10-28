@@ -18,18 +18,20 @@ export function ProjectsCatalogue({ projects }: ProjectsCatalogueProps) {
       return matchesCategory && matchesQuery;
     });
   }, [filter, projects, query]);
+
   return (
     <section className="projects-catalogue" aria-labelledby="project-grid-heading">
       <div className="catalogue-controls">
         <div className="filter-list" role="group" aria-label="Filter projects by category">
           {(["All", ...projectCategories] as const).map((category) => (
-            <button type="button" className={filter === category ? "filter-button is-active" : "filter-button" onClick={() => setFilter(category)} aria-pressed={filter === category} key={category}>{category}</button>
+            <button type="button" className={filter === category ? "filter-button is-active" : "filter-button"} onClick={() => setFilter(category)} aria-pressed={filter === category} key={category}>{category}</button>
           ))}
         </div>
-        <label className="project-search"><span className="sr-only">Search projects</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects..." /></label>
+        <label className="project-search"><span className="sr-only">Search projects</span><input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search projects..." aria-describedby="project-results-count" /></label>
       </div>
       <h2 className="sr-only" id="project-grid-heading">Project grid</h2>
-      {visibleProjects.length ? <ProjectGrid projects={visibleProjects} /> : <div className="empty-projects" role="status"><h3>No projects found.</h3><p>Try a different search or category.</p></div>}
+      <p className="project-results-count" id="project-results-count" aria-live="polite">{visibleProjects.length} {visibleProjects.length === 1 ? "project" : "projects"} shown</p>
+      {visibleProjects.length ? <ProjectGrid projects={visibleProjects} /> : <div className="empty-projects" role="status"><h3>No projects match those filters.</h3><p>Try clearing the search or choosing another category.</p></div>}
     </section>
   );
 }

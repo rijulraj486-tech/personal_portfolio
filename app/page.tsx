@@ -8,5 +8,5 @@ import { FeaturedProjects } from "@/components/projects/featured-projects";
 import { projects } from "@/lib/projects";
 
 export default function Home() {
-  return <><Hero /><AboutPreview /><FeaturedProjects projects={projects.filter((project) => project.featured)} /><SkillsPreview /><div className="home-section github-preview"><GitHubRepositories /></div><ExperiencePreview /><ContactCta /></>;
+  return <><Hero /><AboutPreview /><FeaturedProjects projects={projects} /><SkillsPreview /><div className="home-section github-preview"><GitHubRepositories /></div><ExperiencePreview /><ContactCta /></>;
 }

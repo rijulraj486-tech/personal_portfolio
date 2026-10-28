@@ -29,7 +29,9 @@ export function Hero() {
       </div>
       <div className="hero-visual" aria-hidden="true">
         <div className="hero-visual-grid" />
+        <div className="hero-visual-header"><span>DEVELOPER NOTEBOOK</span><span>01 / 04</span></div>
         <div className="hero-code-card"><span className="code-label">CURRENT FOCUS</span><div className="code-line"><span>const</span> focus = [</div><div className="code-line code-indent">&quot;web&quot;,</div><div className="code-line code-indent">&quot;ai/ml&quot;,</div><div className="code-line code-indent">&quot;research&quot;</div><div className="code-line">];</div></div>
+        <div className="hero-signal hero-signal-one"><span>BUILD</span></div><div className="hero-signal hero-signal-two"><span>LEARN</span></div>
         <div className="hero-orbit hero-orbit-one" /><div className="hero-orbit hero-orbit-two" />
       </div>
     </section>
