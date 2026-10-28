@@ -1,38 +1,41 @@
+import Image from "next/image";
 import Link from "next/link";
-import { githubProfileUrl } from "@/lib/github";
-import { profile } from "@/lib/profile";
 
 export function Hero() {
-  const socialLinks = [
-    githubProfileUrl ? { href: githubProfileUrl, label: "GitHub", external: true } : null,
-    profile.linkedInUrl ? { href: profile.linkedInUrl, label: "LinkedIn", external: true } : null,
-    profile.email ? { href: `mailto:${profile.email}`, label: "Email", external: false } : null,
-  ].filter(Boolean) as { href: string; label: string; external: boolean }[];
-
   return (
-    <section className="hero" aria-labelledby="home-heading">
-      <div className="hero-content">
-        <p className="eyebrow">Rijul Raj</p>
-        <h1 id="home-heading">Software Developer</h1>
-        <p className="hero-copy">I build modern web applications and explore AI/ML-driven software and research projects.</p>
-        <div className="hero-actions">
-          <Link className="button button-primary" href="/projects">View my projects <span aria-hidden="true">→</span></Link>
-          {profile.resumeUrl ? (
-            <a className="button button-secondary" href={profile.resumeUrl} download>Download resume <span aria-hidden="true">↓</span></a>
-          ) : (
-            <button className="button button-secondary" type="button" disabled title="A resume download will be available soon">Download resume <span aria-hidden="true">↓</span></button>
-          )}
+    <section className="editorial-hero reference-hero" aria-labelledby="home-heading">
+      <div className="hero-stage">
+        <Image
+          className="reference-hero-image"
+          src="/image/Confident Portrait on a Warm Orange Gradient.png"
+          alt="Rijul Raj"
+          fill
+          priority
+          sizes="100vw"
+        />
+        <div className="reference-hero-wash" aria-hidden="true" />
+        <div className="hero-grid" aria-hidden="true" />
+        <span className="reference-hero-wordmark" aria-hidden="true">RIJUL</span>
+        <div className="reference-hero-copy">
+          <p>I develop intelligent systems<br />for sensor fusion, radar tracking,<br />and useful web products.</p>
+          <span aria-hidden="true" />
         </div>
-        {socialLinks.length > 0 ? <ul className="hero-social-links" aria-label="Professional links">
-          {socialLinks.map(({ href, label, external }) => <li key={label}><a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>{label}{external ? <span aria-hidden="true"> ↗</span> : null}</a></li>)}
-        </ul> : null}
-      </div>
-      <div className="hero-visual" aria-hidden="true">
-        <div className="hero-visual-grid" />
-        <div className="hero-visual-header"><span>DEVELOPER NOTEBOOK</span><span>01 / 04</span></div>
-        <div className="hero-code-card"><span className="code-label">CURRENT FOCUS</span><div className="code-line"><span>const</span> focus = [</div><div className="code-line code-indent">&quot;web&quot;,</div><div className="code-line code-indent">&quot;ai/ml&quot;,</div><div className="code-line code-indent">&quot;research&quot;</div><div className="code-line">];</div></div>
-        <div className="hero-signal hero-signal-one"><span>BUILD</span></div><div className="hero-signal hero-signal-two"><span>LEARN</span></div>
-        <div className="hero-orbit hero-orbit-one" /><div className="hero-orbit hero-orbit-two" />
+        <Link className="reference-work-card" href="/projects/cmsf-net">
+          <span className="reference-work-visual" aria-hidden="true"><i /><i /><i /></span>
+          <span className="reference-work-footer"><b>✳ AI / ML research</b><em>01</em></span>
+        </Link>
+        <div className="reference-hero-name">
+          <p>©2026</p>
+          <h1 id="home-heading">Rijul</h1>
+          <span>Raj</span>
+        </div>
+        <Link className="reference-contact-card" href="/contact">
+          <span className="reference-contact-image" aria-hidden="true" />
+          <span className="reference-contact-copy"><small>Let&apos;s talk</small><strong>Rijul Raj</strong><em>AI / ML Engineer</em></span>
+          <b aria-hidden="true">↗</b>
+        </Link>
+        <div className="reference-hero-footnote">Software developer <span>·</span> NIT Calicut research <span>·</span> Kerala, India</div>
+        <Link className="hero-scroll" href="#selected-work">Scroll to explore <span aria-hidden="true">↓</span></Link>
       </div>
     </section>
   );

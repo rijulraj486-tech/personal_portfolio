@@ -22,6 +22,15 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
 
   if (!project) notFound();
 
+  const relatedProjects = projects
+    .filter((candidate) => candidate.slug !== project.slug)
+    .sort((first, second) => {
+      const firstSharedCategories = first.categories.filter((category) => project.categories.includes(category)).length;
+      const secondSharedCategories = second.categories.filter((category) => project.categories.includes(category)).length;
+      return secondSharedCategories - firstSharedCategories;
+    })
+    .slice(0, 2);
+
   return (
     <article className="project-detail">
       <Link className="back-link" href="/projects"><span aria-hidden="true">←</span> Back to projects</Link>
@@ -35,6 +44,7 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
       <section aria-labelledby="contributions-heading"><h2 id="contributions-heading">Key contributions</h2><ul className="project-highlights">{project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul></section>
       <section aria-labelledby="technologies-heading"><h2 id="technologies-heading">Technology stack</h2><ul className="tag-list">{project.technologies.map((technology) => <li key={technology}>{technology}</li>)}</ul></section>
       {project.githubUrl || project.liveUrl ? <section aria-labelledby="links-heading"><h2 id="links-heading">Relevant links</h2><div className="project-links">{project.githubUrl ? <a href={project.githubUrl} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a> : null}{project.liveUrl ? <a href={project.liveUrl} target="_blank" rel="noreferrer">Live site <span aria-hidden="true">↗</span></a> : null}</div></section> : null}
+      {relatedProjects.length > 0 ? <nav className="related-projects" aria-labelledby="related-projects-heading"><p className="eyebrow">Continue exploring</p><h2 id="related-projects-heading">Related projects</h2><div className="related-project-list">{relatedProjects.map((relatedProject) => <Link key={relatedProject.slug} href={`/projects/${relatedProject.slug}`}><span>{relatedProject.context ?? relatedProject.categories[0]}</span><strong>{relatedProject.title}</strong><span aria-hidden="true">→</span></Link>)}</div></nav> : null}
     </article>
   );
 }

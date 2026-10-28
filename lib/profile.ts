@@ -3,8 +3,8 @@
  * those destinations are ready to be published.
  */
 export const profile = {
-  email: undefined,
-  linkedInUrl: undefined,
+  email: "rijulraj486@gmail.com",
+  linkedInUrl: "https://linkedin.com/in/rijul-raj",
   // Set this to "/resume.pdf" after public/resume.pdf has been added.
   resumeUrl: undefined,
 } as const;

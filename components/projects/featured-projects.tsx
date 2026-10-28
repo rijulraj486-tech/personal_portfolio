@@ -5,16 +5,16 @@ import { ProjectGrid } from "./project-grid";
 type FeaturedProjectsProps = Readonly<{ projects: readonly Project[] }>;
 
 export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
-  const featuredProjects = projects.filter((project) => project.featured).slice(0, 3);
+  const featuredProjects = projects.slice(0, 4);
 
   if (!featuredProjects.length) return null;
 
   return (
-    <section className="featured-projects" aria-labelledby="featured-projects-heading">
+    <section className="featured-projects" id="selected-work" aria-labelledby="featured-projects-heading">
       <div className="featured-projects-heading">
         <p className="eyebrow">Selected work</p>
-        <h2 id="featured-projects-heading">Featured projects</h2>
-        <p>A selection of research and web work grounded in the projects documented here.</p>
+        <h2 id="featured-projects-heading">Research with real-world intent.</h2>
+        <p>Selected work across sensor fusion, radar tracking, LegalTech, academic publishing, and the web.</p>
       </div>
       <ProjectGrid projects={featuredProjects} />
       <Link className="text-link" href="/projects">View all projects <span aria-hidden="true">→</span></Link>
