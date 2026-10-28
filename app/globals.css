@@ -63,7 +63,7 @@ h1 { max-width: 15ch; margin-bottom: 0; font-size: clamp(3rem, 7vw, 6.8rem); fon
 .project-card:hover h3 { color: var(--accent-strong); }
 .project-card h3 { transition: color 180ms ease; }
 .featured-projects .text-link { margin-top: 3rem; }
-.project-visual.has-image { margin: 0; background: #f6f1ea; }.project-visual-image { object-fit: contain; transition: filter 300ms ease; }.project-card:hover .project-visual-image { filter: saturate(1.05); }.project-card[data-project="cmsf-net"] .project-visual.has-image { min-height: 0; aspect-ratio: 1294 / 1298; }.project-card[data-project="mamba-radar-tracking"] .project-visual.has-image { min-height: 0; aspect-ratio: 2179 / 1407; }
+.project-visual.has-image { margin: 0; background: var(--surface-muted); }.project-visual-image { object-fit: contain; transition: filter 300ms ease; }.project-card:hover .project-visual-image { filter: saturate(1.05); }.featured-projects .project-card[data-project] .project-visual.has-image { min-height: 0; height: clamp(15rem, 24vw, 22rem); }
 
 @media (max-width: 700px) {
   .hero-backdrop-label { top: 23%; left: -7%; font-size: 8rem; }
