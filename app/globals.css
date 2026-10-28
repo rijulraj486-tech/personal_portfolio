@@ -91,3 +91,49 @@ h1 { max-width: 15ch; margin-bottom: 0; font-size: clamp(3rem, 7vw, 6.8rem); fon
 @media (max-width: 850px) { .reference-work-card { right: 2rem; }.reference-hero-copy { top: 43%; }.reference-contact-card { width: 18rem; }.reference-hero-footnote { display: none; } }
 @media (max-width: 700px) { .reference-hero, .reference-hero .hero-stage { min-height: 48rem; }.reference-hero-image { object-position: 58% center; }.reference-hero-wash { background: linear-gradient(90deg, rgb(123 29 13 / 62%), rgb(144 35 15 / 20%) 60%, rgb(115 25 12 / 8%)); }.reference-hero .hero-grid { inset: 4.25rem 1rem 0; background-size: 100% 100%, 100% 13rem; }.reference-hero-wordmark { top: 8.5rem; left: -1.2rem; font-size: 8rem; }.reference-hero-copy { top: 18rem; left: 1.5rem; width: min(16rem, 70vw); font-size: .95rem; }.reference-work-card { top: 10.5rem; right: 1.15rem; width: 8.6rem; border-width: .32rem; }.reference-work-visual { min-height: 5.5rem; }.reference-work-footer { min-height: 2.25rem; }.reference-work-footer b { font-size: .43rem; }.reference-work-footer em { font-size: .55rem; }.reference-hero-name { bottom: 2.3rem; left: 1.5rem; }.reference-hero-name h1 { font-size: clamp(4.7rem, 24vw, 7rem); }.reference-hero-name > span { margin-top: .45rem; font-size: 1rem; }.reference-contact-card { right: 1rem; bottom: 1.5rem; width: min(15rem, 55vw); grid-template-columns: 2.7rem 1fr auto; gap: .45rem; padding: .5rem; }.reference-contact-image { height: 2.7rem; }.reference-contact-copy small { font-size: .5rem; }.reference-contact-copy strong { font-size: .72rem; }.reference-contact-copy em { font-size: .5rem; }.reference-contact-card > b { width: 1.85rem; height: 1.85rem; font-size: 1.05rem; }.reference-hero .hero-scroll { display: none; } }
 @media (max-width: 420px) { .reference-hero, .reference-hero .hero-stage { min-height: 44rem; }.reference-hero-copy { top: 16.5rem; font-size: .82rem; }.reference-work-card { top: 9rem; right: .75rem; }.reference-contact-card { width: 13.6rem; }.reference-hero-name h1 { font-size: 4.8rem; } }
+
+/* Keep the selected-work heading on the same editorial grid as the project cards. */
+.featured-projects-heading {
+  grid-template-columns: minmax(9rem, .65fr) minmax(0, 1.65fr) minmax(14rem, .72fr);
+  align-items: end;
+  gap: clamp(1.5rem, 3.2vw, 3.75rem);
+  margin-bottom: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.featured-projects-heading .eyebrow {
+  align-self: center;
+  margin: 0;
+  padding-top: .25rem;
+}
+
+.featured-projects-heading h2 {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(2.55rem, 4.8vw, 5rem);
+  line-height: .92;
+}
+
+.featured-projects-heading > p:last-child {
+  max-width: 19rem;
+  margin: 0 0 .3rem;
+  border-left: 1px solid var(--line);
+  padding-left: clamp(1rem, 2vw, 1.5rem);
+  color: var(--muted);
+  font-size: clamp(.94rem, 1.15vw, 1.08rem);
+  line-height: 1.58;
+}
+
+@media (min-width: 701px) and (max-width: 980px) {
+  .featured-projects-heading {
+    grid-template-columns: minmax(8rem, .42fr) minmax(0, 1fr);
+    align-items: start;
+    row-gap: 1.25rem;
+  }
+
+  .featured-projects-heading .eyebrow { align-self: start; padding-top: .65rem; }
+  .featured-projects-heading > p:last-child { grid-column: 2; margin: 0; border-left: 0; padding-left: 0; }
+}
+
+@media (max-width: 700px) {
+  .featured-projects-heading > p:last-child { border-left: 0; padding-left: 0; }
+}
