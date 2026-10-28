@@ -151,8 +151,8 @@ h1 { max-width: 15ch; margin-bottom: 0; font-size: clamp(3rem, 7vw, 6.8rem); fon
       "portrait"
       "copy"
       "name"
-      "project"
       "contact"
+      "project"
       "footnote"
       "scroll";
     grid-template-columns: minmax(0, 1fr);
@@ -202,9 +202,11 @@ h1 { max-width: 15ch; margin-bottom: 0; font-size: clamp(3rem, 7vw, 6.8rem); fon
   .reference-hero-copy {
     grid-area: copy;
     width: min(100%, 33rem);
+    max-width: 30ch;
     color: #fff8ed;
     font-size: clamp(.98rem, 2.1vw, 1.15rem);
     line-height: 1.45;
+    overflow-wrap: anywhere;
   }
 
   .reference-hero-copy > span { margin-top: .8rem; }
@@ -283,7 +285,6 @@ h1 { max-width: 15ch; margin-bottom: 0; font-size: clamp(3rem, 7vw, 6.8rem); fon
   }
 
   .reference-hero-copy { font-size: 1rem; }
-  .reference-hero-copy p br { display: none; }
   .reference-hero-name h1 { font-size: clamp(4.25rem, 20vw, 5.6rem); }
 }
 
