@@ -13,5 +13,7 @@ export type Project = {
   githubUrl?: string;
   liveUrl?: string;
   image?: string;
+  imageAlt?: string;
+  imageCaption?: string;
   context?: string;
 };
